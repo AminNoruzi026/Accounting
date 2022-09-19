@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using Accounting.DataLayer;
 using Accounting.DataLayer.Repositories;
 using Accounting.DataLayer.Services;
@@ -40,6 +41,20 @@ namespace Accounting.DataLayer.Context
                 }
 
                 return _accountingRepository;
+            }
+        }
+
+        public GenericRepository<Login> _loginRepository;
+
+        public GenericRepository<Login> LoginRepository
+        {
+            get
+            {
+                if (_loginRepository == null)
+                {
+                    _loginRepository = new GenericRepository<Login>(db);
+                }
+                return _loginRepository;
             }
         }
 

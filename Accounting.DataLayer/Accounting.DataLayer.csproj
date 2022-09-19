@@ -43,6 +43,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,6 +75,9 @@
     </Compile>
     <Compile Include="Context\UnitOfWork.cs" />
     <Compile Include="Customers.cs">
+      <DependentUpon>AccountingDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
       <DependentUpon>AccountingDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,6 +120,9 @@
       <DependentUpon>AccountingDB.edmx</DependentUpon>
       <LastGenOutput>AccountingDB.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

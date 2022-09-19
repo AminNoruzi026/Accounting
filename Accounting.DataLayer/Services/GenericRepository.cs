@@ -42,7 +42,6 @@ namespace Accounting.DataLayer.Services
 
         public virtual void Update(TEntity entity)
         {
-            _dbSet.Attach(entity);
             _db.Entry(entity).State = EntityState.Modified;
         }
 
