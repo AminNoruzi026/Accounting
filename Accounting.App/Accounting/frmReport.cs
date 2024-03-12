@@ -95,7 +95,7 @@ namespace Accounting.App
                 foreach (var accounting in result)
                 {
                     string customerName = db.customerRepository.GetCustomerNameById(accounting.CustomerID);
-                    dgReport.Rows.Add(accounting.ID, customerName, accounting.Amount, accounting.Date.ToShamci(), accounting.Description);
+                    dgReport.Rows.Add(accounting.ID, customerName, accounting.Amount.ToString("#,0"), accounting.Date.ToShamci(), accounting.Description);
                 }
             }
         }
@@ -148,10 +148,10 @@ namespace Accounting.App
             foreach (DataGridViewRow item in dgReport.Rows)
             {
                 dtPrint.Rows.Add(
-                    item.Cells[0].Value.ToString(),
                     item.Cells[1].Value.ToString(),
                     item.Cells[2].Value.ToString(),
-                    item.Cells[3].Value.ToString()
+                    item.Cells[3].Value.ToString(),
+                    item.Cells[4].Value.ToString()
                     );
             }
 
